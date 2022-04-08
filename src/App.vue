@@ -2,34 +2,36 @@
   <div id="app" v-if="!errored">
     <div class="page">
       <Navbar />
-      <!--       <VueHtml2pdf
+      <VueHtml2pdf
         :show-layout="true"
         :float-layout="false"
         :enable-download="true"
         :preview-modal="false"
         :filename="
-          'MonIT' + '_' + new Date().toLocaleDateString().replaceAll('/', '-')
+          'MonDrive' +
+          '_' +
+          new Date().toLocaleDateString().replaceAll('/', '-')
         "
         :pdf-quality="2"
         :manual-pagination="true"
-        pdf-format="a4"
+        pdf-format="a3"
         pdf-orientation="portrait"
         ref="html2Pdf"
         pdf-content-width="100%"
       >
-        <section slot="pdf-content"> -->
-      <div class="page-wrapper">
-        <Header />
-        <div class="page-body">
-          <div class="container-xl">
-            <div class="row row-deck row-cards">
-              <DiskList size="col-sm-12" :title="title" :items="items" />
+        <section slot="pdf-content">
+          <div class="page-wrapper">
+            <Header />
+            <div class="page-body">
+              <div class="container-xl">
+                <div class="row row-deck row-cards">
+                  <DiskList size="col-sm-12" :title="title" :items="items" />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!--         </section>
-      </VueHtml2pdf> -->
+        </section>
+      </VueHtml2pdf>
     </div>
   </div>
 
@@ -45,6 +47,7 @@ import Header from "./components/Header";
 import DiskList from "./components/DiskList";
 
 import axios from "axios";
+import VueHtml2pdf from "vue-html2pdf";
 
 export default {
   name: "App",
@@ -52,6 +55,7 @@ export default {
     Navbar,
     Header,
     DiskList,
+    VueHtml2pdf,
   },
 
   data: () => ({
@@ -66,6 +70,7 @@ export default {
       .get("data.json")
       .then((response) => {
         this.items = response.data.info;
+        this.$refs.html2Pdf.generatePdf();
       })
       .catch((error) => {
         console.log(error);

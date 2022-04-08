@@ -87,6 +87,11 @@
               <IconWindows />
               Version non supportée
             </td>
+
+            <td v-if="item[0].val.includes('off')">
+              <IconWindows />
+              Donnée non disponible
+            </td>
           </tr>
         </tbody>
       </table>

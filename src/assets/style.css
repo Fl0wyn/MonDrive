@@ -1,0 +1,23 @@
+.icon-fa {
+  width: 1.25rem;
+}
+
+.icon-fa-success {
+  fill: var(--tblr-success);
+}
+.icon-fa-danger {
+  fill: var(--tblr-danger);
+}
+
+.icon-fa-windows {
+  fill: var(--tblr-info);
+}
+
+.icon-title {
+  width: 1.25rem;
+  fill: #b1b1b1;
+}
+
+.list-group-item {
+  background-color: #fff !important;
+}

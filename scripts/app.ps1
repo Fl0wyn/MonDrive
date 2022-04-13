@@ -1,5 +1,5 @@
 $Folder = "C:\Exploitation\MonDrive"
-$ListServeurs = Get-Content C:\Exploitation\ListMonDrive.txt
+$ListServeurs = Get-Content C:\Exploitation\ListMonDrive.txt | Where-Object { $_.trim() -ne "" }
 
 Write-Output '{"info": {' | Out-File "$Folder\data.json"
 

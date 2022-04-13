@@ -2,7 +2,7 @@
 	<img src="src/assets/logo.svg" width="96"/>
 	<h1>MonDrive</h1>
 	<br/>
-	<img src="https://img.shields.io/badge/version-1.1-informational.svg?style=for-the-badge" />
+	<img src="https://img.shields.io/badge/version-1.2-informational.svg?style=for-the-badge" />
 	<img src="https://img.shields.io/badge/statut-stable-success.svg?style=for-the-badge" />
 	<br/><br/>
 </div>

@@ -15,9 +15,9 @@ Afficher les lecteurs locaux d'une liste de serveur Windows
 
 ### Prérequis
 
-- Windows 2012 et supérieur
-- Navigateur Web moderne par défault
-- Autoriser l'exécution de scripts PowerShell (`Set-ExecutionPolicy Unrestricted -Force`)
+- Windows 2012 où supérieur
+- Navigateur web moderne par défault
+- Autoriser l'exécution des scripts PowerShell (`Set-ExecutionPolicy Unrestricted -Force`)
 
 Lancer la commande PowerShell suivante:
 
@@ -27,7 +27,7 @@ Lancer la commande PowerShell suivante:
 
 ## Configuration
 
-Editer le fichier **ListMonDrive.txt** dans `C:\Exploitation\`
+Editer le fichier **ListMonDrive.txt** dans `C:\Exploitation`
 
 ## Exécution
 

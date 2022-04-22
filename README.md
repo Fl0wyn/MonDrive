@@ -9,6 +9,8 @@
 
 Afficher les lecteurs locaux d'une liste de serveur Windows
 
+<img src="src/assets/demo.png" />
+
 ## Installation
 
 ### Windows 2016 et supérieur

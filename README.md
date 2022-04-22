@@ -13,15 +13,7 @@ Afficher les lecteurs locaux d'une liste de serveur Windows
 
 ## Installation
 
-### Windows 2016 et supérieur
-
-Lancer la commande PowerShell suivante
-
-```powershell
-iwr -useb https://raw.githubusercontent.com/Fl0wyn/MonDrive/master/scripts/install.ps1 | iex
-```
-
-### Windows 2012 et 2012R2
+### Windows 2012 et supérieur
 
 Lancer la commande PowerShell suivante
 
@@ -38,6 +30,10 @@ Set-ExecutionPolicy Unrestricted -Force
 ## Configuration
 
 Editer le fichier **ListMonDrive.txt** dans `C:\Exploitation\`
+
+## Exécution
+
+Lancer l'applcation <img src="src/assets/logo.svg" width="16"/> **MonDrive.exe** présent sur le bureau
 
 ## Ressources
 

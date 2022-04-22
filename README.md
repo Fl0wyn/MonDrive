@@ -19,7 +19,7 @@ Afficher les lecteurs locaux d'une liste de serveur Windows
 - Navigateur Web moderne par défault
 - Autoriser l'exécution de scripts PowerShell (`Set-ExecutionPolicy Unrestricted -Force`)
 
-### Lancer la commande PowerShell suivante:
+Lancer la commande PowerShell suivante:
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; iwr -useb https://raw.githubusercontent.com/Fl0wyn/MonDrive/master/scripts/install.ps1 | iex
@@ -32,6 +32,18 @@ Editer le fichier **ListMonDrive.txt** dans `C:\Exploitation\`
 ## Exécution
 
 Lancer l'applcation <img src="src/assets/logo.svg" width="16"/> **MonDrive.exe** présent sur le bureau
+
+## Désinstallation
+
+Supprimer l'éxécutable **C:\Windows\Temp\MonDrive-Update.exe**
+
+Supprimer le dossier **C:\Exploitation\MonDrive** et l'icône sur le bureau
+
+Arrêter le serveur web si le dossier est en cours d'utilisation
+
+```powershell
+Stop-Process -Force -Name "tiny"
+```
 
 ## Ressources
 

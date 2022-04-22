@@ -13,18 +13,16 @@ Afficher les lecteurs locaux d'une liste de serveur Windows
 
 ## Installation
 
-### Windows 2012 et supérieur
+### Prérequis
 
-Lancer la commande PowerShell suivante
+- Windows 2012 et supérieur
+- Navigateur Web moderne par défault
+- Autoriser l'exécution de scripts PowerShell (`Set-ExecutionPolicy Unrestricted -Force`)
+
+### Lancer la commande PowerShell suivante:
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; iwr -useb https://raw.githubusercontent.com/Fl0wyn/MonDrive/master/scripts/install.ps1 | iex
-```
-
-> Entrer la commande PowerShell ci dessous si l'éxécution des scripts n'est pas autorisées
-
-```powershell
-Set-ExecutionPolicy Unrestricted -Force
 ```
 
 ## Configuration

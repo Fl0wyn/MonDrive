@@ -21,7 +21,7 @@
       >
         <section slot="pdf-content">
           <div class="page-wrapper">
-            <Header />
+            <Header :items="items" />
             <div class="page-body">
               <div class="container-xl">
                 <div class="row row-deck row-cards">

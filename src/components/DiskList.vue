@@ -22,7 +22,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in items" :key="index">
+          <tr
+            v-for="(item, index) in items"
+            :key="index"
+            v-show="item[2].val.includes('ok')"
+          >
             <!-- Hôte -->
             <td>
               <b> {{ index }} </b>
@@ -41,7 +45,7 @@
             </td>
 
             <!-- OS -->
-            <td v-if="item[0].val.includes('on') && item[2].val.includes('ok')">
+            <td v-if="item[0].val.includes('on')">
               <span v-if="item[1].val.includes('Windows')">
                 <IconWindows />
                 Windows

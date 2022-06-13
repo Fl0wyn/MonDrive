@@ -6,6 +6,23 @@
           <div>{{ "Semaine : " + weekNumber }}</div>
           <h2>{{ fullDate }}</h2>
         </div>
+        <!-- Début : Erreur -->
+        <div
+          class="col-12 col-md-auto ms-auto d-print-none"
+          v-for="(item, index) in items"
+          :key="index"
+          v-show="item[2].val.includes('ko')"
+        >
+          <div class="alert alert-danger" role="alert">
+            <h4 class="alert-title">Donnée non disponible</h4>
+            <div class="text-muted">
+              <div class="list-group list-group-flush">
+                {{ "Serveur : " + index }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin : Erreur -->
       </div>
     </div>
   </div>
@@ -20,6 +37,8 @@ export default {
     weekNumber: "",
     fullDate: "",
   }),
+
+  props: ["items"],
 
   methods: {
     DateTime,

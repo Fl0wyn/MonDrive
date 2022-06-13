@@ -39,6 +39,14 @@ root@SRV-3 22 motDePasse
 root@SRV-4 22 motDePasse
 ```
 
+Valider une première fois les clés SSH
+```powershell
+C:\Exploitation\MonDrive
+
+pkink -ssh root@SRV-3 22
+pkink -ssh root@SRV-7 22
+```
+
 ## Exécution
 
 Lancer l'applcation <img src="src/assets/logo.svg" width="16"/> **MonDrive.exe** présent sur le bureau

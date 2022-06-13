@@ -2,12 +2,12 @@
 	<img src="src/assets/logo.svg" width="96"/>
 	<h1>MonDrive</h1>
 	<br/>
-	<img src="https://img.shields.io/badge/version-1.2-informational.svg?style=for-the-badge" />
+	<img src="https://img.shields.io/badge/version-1.3-informational.svg?style=for-the-badge" />
 	<img src="https://img.shields.io/badge/statut-stable-success.svg?style=for-the-badge" />
 	<br/><br/>
 </div>
 
-Afficher les lecteurs locaux d'une liste de serveur Windows
+Afficher l'état des disques des serveurs Windows & Linux
 
 <img src="src/assets/demo.png" />
 
@@ -27,7 +27,17 @@ Lancer la commande PowerShell suivante:
 
 ## Configuration
 
-Editer le fichier **ListMonDrive.txt** dans `C:\Exploitation`
+Editer le fichier **ListMonDrive.txt** dans `C:\Exploitation` en respectant le format suivant:
+
+```yml
+# Windows
+SRV-1
+SRV-2
+
+# Linux
+root@SRV-3 22 motDePasse
+root@SRV-4 22 motDePasse
+```
 
 ## Exécution
 
@@ -51,3 +61,4 @@ Stop-Process -Force -Name "tiny"
 - [Font Awesome](https://fontawesome.com)
 - [TinyWeb](https://www.ritlabs.com/en/products/tinyweb/)
 - [PS2EXE](https://github.com/MScholtes/PS2EXE)
+- [Plink](https://www.chiark.greenend.org.uk/~sgtatham/putty/)

@@ -1,2 +1,7 @@
+# Windows
 SRV-1
 SRV-2
+
+# Linux
+root@SRV-3 22 motDePasse
+root@SRV-4 22 motDePasse

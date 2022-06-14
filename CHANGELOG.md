@@ -1,6 +1,6 @@
 ## Change Log
 
-### [1.3] - 13/06/2022
+### [1.3] - 14/06/2022
 
 - [ **➕** ] Ajout de la gestion des disques sous Linux
 

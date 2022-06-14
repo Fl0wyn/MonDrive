@@ -39,9 +39,9 @@ root@SRV-3 22 motDePasse
 root@SRV-4 22 motDePasse
 ```
 
-Valider une première fois les clés SSH
+Valider une première fois les clés SSH pour chaques serveurs Linux
 ```powershell
-C:\Exploitation\MonDrive
+#C:\Exploitation\MonDrive
 
 pkink -ssh root@SRV-3 22
 pkink -ssh root@SRV-7 22

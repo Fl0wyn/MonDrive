@@ -22,11 +22,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="(item, index) in items"
-            :key="index"
-            v-show="item[2].val.includes('ok')"
-          >
+          <tr v-for="(item, index) in items" :key="index">
             <!-- Hôte -->
             <td>
               <b> {{ index }} </b>
@@ -50,24 +46,14 @@
                 <IconWindows />
                 Windows
               </span>
-              <!--               <span v-if="item[1].val.includes('Linux')">
-                <IconLinux />
-                Linux
-              </span> -->
               <span v-else>
                 <IconLinux />
                 Linux
-                <!-- <IconWarning /> -->
               </span>
             </td>
-            <!--             <td v-else>
-              <span v-if="item[0].val.includes('off')"></span>
-              <span v-else>
-                <IconWarning />
-                Version non supportée
-              </span>
-            </td>
- -->
+
+            <td v-if="item[0].val.includes('off')"></td>
+
             <!-- Liste des disques -->
             <td v-if="item[0].val.includes('on') && item[2].val.includes('ok')">
               <div class="row" v-for="n in 1" :key="n">
@@ -112,7 +98,10 @@
                 </div>
               </div>
             </td>
-            <td v-else></td>
+            <td v-else>
+              <IconWarning />
+              Donnée non disponible
+            </td>
           </tr>
         </tbody>
       </table>
@@ -123,7 +112,7 @@
 <script>
 import IconDanger from "./icons/IconDanger.vue";
 import IconSuccess from "./icons/IconSuccess.vue";
-//import IconWarning from "./icons/IconWarning.vue";
+import IconWarning from "./icons/IconWarning.vue";
 
 import IconWindows from "./icons/IconWindows.vue";
 import IconLinux from "./icons/IconLinux.vue";
@@ -133,7 +122,7 @@ export default {
   components: {
     IconDanger,
     IconSuccess,
-    //IconWarning,
+    IconWarning,
     IconWindows,
     IconLinux,
   },

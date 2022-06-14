@@ -3,7 +3,6 @@
 ### [1.3] - 13/06/2022
 
 - [ **➕** ] Ajout de la gestion des disques sous Linux
-- [ **🔧** ] Correction de la gestion des erreurs
 
 ---
 

@@ -46,31 +46,23 @@ foreach ($i in $ListServeurs) {
             # Vérifier que la commande "Get-CimInstance" existe
             #
             if ($?) { 
-                #
+                Write-Output '{"name": "compatibility", "val": "ok"},' | Out-File -Append "$Folder\data.json"
+
                 # Vérifier s'il existe plus d'un disque
                 #
                 if ( (Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" -ComputerName $Windows | Measure-Object).Count -eq "1") {
 
-                    #
-                    # Vérifier si la commande s'est bien passée
-                    #
-                    if ($?) {
-                        Write-Output '{"name": "compatibility", "val": "ok"},' | Out-File -Append "$Folder\data.json"
-                        function buildJson {
-                            Write-Output "["
-                            $CmdDisk
-                            Write-Output "]"
-                        }
-                        buildJson | Out-File -Append "$Folder\data.json"
+                    function buildJson {
+                        Write-Output "["
+                        $CmdDisk
+                        Write-Output "]"
                     }
-                    else {
-                        $CmdDisk | Out-File -Append  "$Folder\data.json"
-                    }
-                } 
-                else {
-                    Write-Output '{"name": "compatibility", "val": "ko"}' | Out-File -Append "$Folder\data.json"
+                    buildJson | Out-File -Append "$Folder\data.json"
                 }
-            }
+                else {
+                    $CmdDisk | Out-File -Append  "$Folder\data.json"
+                }
+            } 
             else {
                 Write-Output '{"name": "compatibility", "val": "ko"}' | Out-File -Append "$Folder\data.json"
             }

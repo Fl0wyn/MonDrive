@@ -1,5 +1,5 @@
 $FolderDist = ".\MonDrive"
-#$File = "MonDrive.zip"
+$File = "MonDrive.zip"
 
 yarn build
 
@@ -11,7 +11,7 @@ Copy-Item .\VERSION $FolderDist
 Copy-Item .\cmdssh.txt $FolderDist
 Copy-Item .\exe\* $FolderDist 
 
-#Compress-Archive $FolderDist $File
+Compress-Archive $FolderDist $File
 
 #remove-Item -Recurse $FolderDist
 #Remove-Item *.zip

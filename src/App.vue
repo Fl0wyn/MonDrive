@@ -21,7 +21,7 @@
       >
         <section slot="pdf-content">
           <div class="page-wrapper">
-            <Header :items="items" />
+            <Header />
             <div class="page-body">
               <div class="container-xl">
                 <div class="row row-deck row-cards">
@@ -70,7 +70,7 @@ export default {
       .get("data.json")
       .then((response) => {
         this.items = response.data.info;
-        this.$refs.html2Pdf.generatePdf();
+        //this.$refs.html2Pdf.generatePdf();
       })
       .catch((error) => {
         console.log(error);

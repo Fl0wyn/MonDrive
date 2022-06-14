@@ -1,16 +1,27 @@
 .icon-fa {
   width: 1.25rem;
+  margin-right: 0.1rem;
+  margin-top: -0.1rem;
 }
 
 .icon-fa-success {
   fill: var(--tblr-success);
 }
+
 .icon-fa-danger {
   fill: var(--tblr-danger);
 }
 
+.icon-fa-warning {
+  fill: var(--tblr-warning);
+}
+
 .icon-fa-windows {
-  fill: var(--tblr-info);
+  fill: #1976d2;
+}
+
+.icon-fa-linux {
+  fill: #2c2c2c;
 }
 
 .icon-title {

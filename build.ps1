@@ -32,6 +32,7 @@ Remove-Item $FolderDist\data.json
 
 Copy-Item .\scripts\app.ps1 $FolderDist
 Copy-Item .\VERSION $FolderDist
+Copy-Item .\commands.txt $FolderDist
 Copy-Item .\exe\* $FolderDist 
 
 Compress-Archive $FolderDist $File

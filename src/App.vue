@@ -70,7 +70,7 @@ export default {
       .get("data.json")
       .then((response) => {
         this.items = response.data.info;
-        this.$refs.html2Pdf.generatePdf();
+        //this.$refs.html2Pdf.generatePdf();
       })
       .catch((error) => {
         console.log(error);

@@ -17,11 +17,13 @@
           <tr>
             <th>Hôte</th>
             <th>Statut</th>
-            <th>Disques</th>
+            <th>Système d'exploitation</th>
+            <th>Disque(s)</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(item, index) in items" :key="index">
+            <!-- Hôte -->
             <td>
               <b> {{ index }} </b>
             </td>
@@ -38,16 +40,30 @@
               </span>
             </td>
 
+            <!-- OS -->
+            <td v-if="item[0].val.includes('on')">
+              <span v-if="item[1].val.includes('Windows')">
+                <IconWindows />
+                Windows
+              </span>
+              <span v-else>
+                <IconLinux />
+                Linux
+              </span>
+            </td>
+
+            <td v-if="item[0].val.includes('off')"></td>
+
             <!-- Liste des disques -->
-            <td v-if="item[0].val.includes('on') && item[1].val.includes('ok')">
+            <td v-if="item[0].val.includes('on') && item[2].val.includes('ok')">
               <div class="row" v-for="n in 1" :key="n">
                 <div v-for="k in n + 2" :key="k" style="width: 200px">
-                  <div v-if="item[0].val.includes('on') && item[2][k - 1]">
+                  <div v-if="item[0].val.includes('on') && item[3][k - 1]">
                     <span>
                       {{
-                        item[2][k - 1].VolumeName +
+                        item[3][k - 1].VolumeName +
                         " (" +
-                        item[2][k - 1].DeviceID +
+                        item[3][k - 1].DeviceID +
                         ")"
                       }}</span
                     >
@@ -57,15 +73,15 @@
                         :class="
                           'progress-bar ' +
                           Color(
-                            ((item[2][k - 1].Size - item[2][k - 1].FreeSpace) /
-                              item[2][k - 1].Size) *
+                            ((item[3][k - 1].Size - item[3][k - 1].FreeSpace) /
+                              item[3][k - 1].Size) *
                               100
                           )
                         "
                         :style="
                           'width: ' +
-                          ((item[2][k - 1].Size - item[2][k - 1].FreeSpace) /
-                            item[2][k - 1].Size) *
+                          ((item[3][k - 1].Size - item[3][k - 1].FreeSpace) /
+                            item[3][k - 1].Size) *
                             100 +
                           '%'
                         "
@@ -74,22 +90,16 @@
                     </div>
 
                     <span>
-                      {{ convertByte(item[2][k - 1].FreeSpace) }}
+                      {{ convertByte(item[3][k - 1].FreeSpace) }}
                       libres sur
-                      {{ convertByte(item[2][k - 1].Size) }}
+                      {{ convertByte(item[3][k - 1].Size) }}
                     </span>
                   </div>
                 </div>
               </div>
             </td>
-
-            <td v-if="item[0].val.includes('on') && item[1].val.includes('ko')">
-              <IconWindows />
-              Version non supportée
-            </td>
-
-            <td v-if="item[0].val.includes('off')">
-              <IconWindows />
+            <td v-else>
+              <IconWarning />
               Donnée non disponible
             </td>
           </tr>
@@ -100,16 +110,21 @@
 </template>
 
 <script>
-import IconSuccess from "./icons/IconSuccess.vue";
 import IconDanger from "./icons/IconDanger.vue";
+import IconSuccess from "./icons/IconSuccess.vue";
+import IconWarning from "./icons/IconWarning.vue";
+
 import IconWindows from "./icons/IconWindows.vue";
+import IconLinux from "./icons/IconLinux.vue";
 
 export default {
   name: "DiskList",
   components: {
-    IconSuccess,
     IconDanger,
+    IconSuccess,
+    IconWarning,
     IconWindows,
+    IconLinux,
   },
 
   props: ["size", "title", "items"],
@@ -127,7 +142,7 @@ export default {
       return (
         parseFloat((a / Math.pow(k, i)).toFixed(d)) +
         " " +
-        ["o", "Ko", "Mo", "Go", "To"][i]
+        ["Ko", "Mo", "Go", "To"][i]
       );
     },
   },

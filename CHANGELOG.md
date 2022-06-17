@@ -1,10 +1,14 @@
 ## Change Log
 
+### [1.4] - 17/06/2022
+
+- [ **🔧** ] Correction d'un crash de l'application en cas d'hôte non compatible
+
+---
+
 ### [1.3] - 14/06/2022
 
 - [ **➕** ] Ajout de la gestion des disques sous Linux
-
----
 
 ### [1.2] - 13/04/2022
 

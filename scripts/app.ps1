@@ -32,15 +32,15 @@ foreach ($i in $ListServeurs) {
         $Windows = $i | Select-String -NotMatch "@", "#"
         if ($Windows) {
             #
+            # Ajout du tag Windows
+            #
+            Write-Output '{"name": "OS", "val": "Windows"},' | Out-File -Append "$Folder\data.json"
+
+            #
             # Afficher la liste des disque logiques
             #
             $CmdDisk = Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" -ComputerName $Windows 2> $null | `
                 Select-Object -Property VolumeName, DeviceID, @{Name = "FreeSpace"; Expression = { $_.freespace -replace ".{3}$" } }, @{Name = "Size"; Expression = { $_.size -replace ".{3}$" } } | ConvertTo-Json
-
-            #
-            # Ajout du tag Windows
-            #
-            Write-Output '{"name": "OS", "val": "Windows"},' | Out-File -Append "$Folder\data.json"
 
             # 
             # Vérifier que la commande "Get-CimInstance" existe

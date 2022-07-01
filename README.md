@@ -35,16 +35,16 @@ SRV-1
 SRV-2
 
 # Linux
-root@SRV-3 22 motDePasse
-root@SRV-4 22 motDePasse
+root@SRV-1 22 motDePasse
+root@SRV-2 22 motDePasse
 ```
 
 Valider une première fois les clés SSH pour chaques serveurs Linux
 ```powershell
 cd C:\Exploitation\MonDrive
 
-.\pkink.exe -ssh root@SRV-3 22
-.\pkink.exe -ssh root@SRV-7 22
+.\pkink.exe -ssh root@SRV-1 22
+.\pkink.exe -ssh root@SRV-2 22
 ```
 
 ## Exécution
